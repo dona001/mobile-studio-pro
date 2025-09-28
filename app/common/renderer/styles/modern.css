@@ -1,0 +1,338 @@
+/* Modern OCBC Test Studio Styles */
+:root {
+    --ocbc-red: #E60012;
+    --ocbc-gray: #333333;
+    --ocbc-bg: #F8F8F8;
+    --ocbc-white: #FFFFFF;
+    --ocbc-border: #E5E5E5;
+    --ocbc-text: #333333;
+    --ocbc-text-light: #666666;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--ocbc-bg);
+    color: var(--ocbc-text);
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--ocbc-white);
+    border-right: 1px solid var(--ocbc-border);
+    padding: 1rem;
+}
+
+.sidebar-header {
+    margin-bottom: 2rem;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ocbc-red);
+    margin: 0;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--ocbc-text);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--ocbc-bg);
+    color: var(--ocbc-red);
+}
+
+.sidebar-nav a.active {
+    background-color: var(--ocbc-red);
+    color: var(--ocbc-white);
+}
+
+.sidebar-nav svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: var(--ocbc-white);
+    border-bottom: 1px solid var(--ocbc-border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ocbc-text);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Cards */
+.card {
+    background: var(--ocbc-white);
+    border: 1px solid var(--ocbc-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ocbc-text);
+    margin: 0 0 0.5rem 0;
+}
+
+.card-description {
+    color: var(--ocbc-text-light);
+    margin: 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--ocbc-red);
+    color: var(--ocbc-white);
+}
+
+.btn-primary:hover {
+    background-color: #CC0010;
+}
+
+.btn-secondary {
+    background-color: var(--ocbc-white);
+    color: var(--ocbc-text);
+    border: 1px solid var(--ocbc-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--ocbc-bg);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.quick-action-card {
+    background: var(--ocbc-white);
+    border: 1px solid var(--ocbc-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.quick-action-card:hover {
+    border-color: var(--ocbc-red);
+    box-shadow: 0 4px 12px rgba(230, 0, 18, 0.1);
+}
+
+.quick-action-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    background: var(--ocbc-red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ocbc-white);
+}
+
+.quick-action-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ocbc-text);
+    margin: 0 0 0.5rem 0;
+}
+
+.quick-action-description {
+    color: var(--ocbc-text-light);
+    margin: 0;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--ocbc-white);
+    border: 1px solid var(--ocbc-border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ocbc-red);
+    margin: 0;
+}
+
+.stat-label {
+    color: var(--ocbc-text-light);
+    margin: 0.25rem 0 0 0;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    color: var(--ocbc-text);
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--ocbc-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--ocbc-red);
+}
+
+/* Tabs */
+.tabs {
+    border-bottom: 1px solid var(--ocbc-border);
+    margin-bottom: 1.5rem;
+}
+
+.tab-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-item {
+    margin-right: 1rem;
+}
+
+.tab-button {
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    color: var(--ocbc-text-light);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab-button.active {
+    color: var(--ocbc-red);
+    border-bottom-color: var(--ocbc-red);
+}
+
+.tab-button:hover {
+    color: var(--ocbc-text);
+}
+
+.tab-content {
+    padding: 1.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--ocbc-border);
+    }
+
+    .content {
+        padding: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

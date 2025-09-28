@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)",
+    ":pinAllExceptPeerDependencies"
+  ],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["@types/react", "@types/react-dom", "react", "react-dom"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["webdriver", "@wdio/protocols"],
+      "groupName": "WebdriverIO-related packages",
+      "groupSlug": "webdriverio"
+    },
+    {
+      "matchPackageNames": ["appium", "@appium/**", "!@appium/base-plugin"],
+      "groupName": "Appium-related packages",
+      "groupSlug": "appium"
+    },
+    {
+      "matchPackageNames": ["@appium/base-plugin"],
+      "skipArtifactsUpdate": true
+    }
+  ],
+  "semanticCommits": "enabled",
+  "schedule": ["after 10pm", "before 5:00am"],
+  "timezone": "America/Vancouver"
+}
