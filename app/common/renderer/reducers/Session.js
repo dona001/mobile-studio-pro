@@ -42,7 +42,7 @@ import {
 } from '../actions/Session';
 import {SERVER_TYPES, SESSION_BUILDER_TABS} from '../constants/session-builder';
 
-const visibleProviders = []; // Pull this from the VISIBLE_PROVIDERS setting
+const visibleProviders = ['experitest']; // Default visible providers
 
 const server = {};
 for (const serverType of _.values(SERVER_TYPES)) {

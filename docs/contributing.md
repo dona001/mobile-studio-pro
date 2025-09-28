@@ -9,7 +9,7 @@ Want to contribute to this app? We'd love it!
 
 ## Code
 
-The application is primarily built using React, with the desktop app version being based on Electron.
+The application is primarily built using React, with the web app version being based on Vite.
 
 To start off, clone the project from GitHub and run:
 
@@ -29,7 +29,7 @@ Run in development mode:
 
 ```bash
 npm run dev:browser  # same as the plugin version
-npm run dev:electron
+npm run dev
 ```
 
 !!! tip
@@ -56,7 +56,7 @@ Build the production version:
 ```bash
 npm run build:browser  # output directory: /dist-browser
 npm run build:plugin   # output directory: /plugins/dist-browser
-npm run build:electron # output directory: /dist
+npm run build # output directory: /dist-browser
 ```
 
 Build the production version and run it:
@@ -64,18 +64,14 @@ Build the production version and run it:
 ```bash
 npm run preview:browser
 npm run preview:plugin
-npm run preview:electron
+npm run preview
 ```
 
 Build the desktop app executable package (and other artifacts) for your platform into `/release`:
 
 !!! note
 
-    For macOS, this requires code signing environment variables to be set.
-
-```bash
-npm run pack:electron
-```
+    This is now a web application. No desktop packaging is needed.
 
 Link the plugin version to your local Appium server:
 

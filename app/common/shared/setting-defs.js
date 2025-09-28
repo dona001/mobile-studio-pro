@@ -23,5 +23,5 @@ export const DEFAULT_SETTINGS = {
   [SESSION_SERVER_PARAMS]: null,
   [SESSION_SERVER_TYPE]: null,
   [SAVED_CLIENT_FRAMEWORK]: 'javaOCBC',
-  [VISIBLE_PROVIDERS]: null,
+  [VISIBLE_PROVIDERS]: ['experitest'],
 };

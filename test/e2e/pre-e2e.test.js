@@ -48,7 +48,8 @@ describe('E2E tests', function () {
         );
       }
     } else {
-      appPath = require(join(__dirname, '..', '..', 'node_modules', 'electron'));
+      // appPath = require(join(__dirname, '..', '..', 'node_modules', 'electron'));
+      // Electron removed - this test is no longer applicable
       // args = [join(__dirname, '..', '..')];
     }
 

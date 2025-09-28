@@ -1,6 +1,6 @@
 import {Suspense} from 'react';
 import {Provider} from 'react-redux';
-import {MemoryRouter, Route, Routes} from 'react-router';
+import {BrowserRouter, Route, Routes} from 'react-router';
 
 import Spinner from './components/Spinner/Spinner.jsx';
 import InspectorPage from './containers/InspectorPage';
@@ -18,7 +18,7 @@ ipcRenderer.on('appium-language-changed', (event, message) => {
 const Root = ({store}) => (
   <Provider store={store}>
     <ThemeProvider>
-      <MemoryRouter initialEntries={['/']}>
+      <BrowserRouter>
         <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<SessionPage />} />
@@ -26,7 +26,7 @@ const Root = ({store}) => (
             <Route path="/inspector" element={<InspectorPage />} />
           </Routes>
         </Suspense>
-      </MemoryRouter>
+      </BrowserRouter>
     </ThemeProvider>
   </Provider>
 );
