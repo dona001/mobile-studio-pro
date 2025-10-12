@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # OCBC Mobile Pro Frontend
+  frontend:
+    container_name: ocbc-mobile-pro-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - ocbc-mobile-pro-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Appium Server (Optional - for local testing)
+  appium:
+    container_name: ocbc-mobile-pro-appium
+    image: nexus.ocbc.com:8443/appium/appium:latest
+    ports:
+      - "4723:4723"
+    environment:
+      - APPIUM_HOST=0.0.0.0
+      - APPIUM_PORT=4723
+    volumes:
+      # Mount Android SDK if needed
+      - android-sdk:/root/android-sdk
+      # Mount for app files
+      - ./apps:/apps
+    privileged: true
+    networks:
+      - ocbc-mobile-pro-network
+    restart: unless-stopped
+    command: ["appium", "--allow-cors", "--allow-insecure", "chromedriver_autodownload"]
+    # Uncomment if you don't want to run Appium in container
+    # profiles: ["with-appium"]
+
+networks:
+  ocbc-mobile-pro-network:
+    driver: bridge
+
+volumes:
+  android-sdk:
+    driver: local
+
