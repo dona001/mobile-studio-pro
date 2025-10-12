@@ -1,6 +1,5 @@
-# Multi-stage build for OCBC Mobile Pro
-# Stage 1: Build the application
-FROM nexus.ocbc.com:8443/node:20-alpine AS builder
+# OCBC Mobile Pro - Simple Dockerfile
+FROM nexus.ocbc.com:8443/node:20-alpine
 
 WORKDIR /app
 
@@ -16,22 +15,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Stage 2: Serve with nginx
-FROM nexus.ocbc.com:8443/nginx:alpine
-
-# Copy built assets from builder stage
-COPY --from=builder /app/dist-browser /usr/share/nginx/html
-
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
 # Expose port
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
-
+# Start preview server (serves built files)
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8080"]
