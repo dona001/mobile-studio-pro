@@ -3,7 +3,7 @@ import {Checkbox, Col, Collapse, Form, Input, Row} from 'antd';
 import {SERVER_TYPES} from '../../constants/session-builder';
 import styles from './Session.module.css';
 
-const AdvancedServerParams = ({server, setServerParam, serverType, t}) => (
+const AdvancedServerParams = ({server, setServerParam, t}) => (
   <Row gutter={8}>
     <Col className={styles.advancedSettingsContainerCol}>
       <div className={styles.advancedSettingsContainer}>
@@ -13,24 +13,22 @@ const AdvancedServerParams = ({server, setServerParam, serverType, t}) => (
               label: t('Advanced Settings'),
               children: (
                 <Row>
-                  {serverType !== 'lambdatest' && (
-                    <Col span={7}>
-                      <Form.Item>
-                        <Checkbox
-                          checked={!!server.advanced.allowUnauthorized}
-                          onChange={(e) =>
-                            setServerParam(
-                              'allowUnauthorized',
-                              e.target.checked,
-                              SERVER_TYPES.ADVANCED,
-                            )
-                          }
-                        >
-                          {t('allowUnauthorizedCerts')}
-                        </Checkbox>
-                      </Form.Item>
-                    </Col>
-                  )}
+                  <Col span={7}>
+                    <Form.Item>
+                      <Checkbox
+                        checked={!!server.advanced.allowUnauthorized}
+                        onChange={(e) =>
+                          setServerParam(
+                            'allowUnauthorized',
+                            e.target.checked,
+                            SERVER_TYPES.ADVANCED,
+                          )
+                        }
+                      >
+                        {t('allowUnauthorizedCerts')}
+                      </Checkbox>
+                    </Form.Item>
+                  </Col>
                   <Col span={5} align="right">
                     <Form.Item>
                       <Checkbox

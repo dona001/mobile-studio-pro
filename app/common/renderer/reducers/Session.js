@@ -46,7 +46,7 @@ const visibleProviders = ['experitest']; // Default visible providers
 
 const server = {};
 for (const serverType of _.values(SERVER_TYPES)) {
-  server[serverType] = serverType === SERVER_TYPES.SAUCE ? {dataCenter: 'us-west-1'} : {};
+  server[serverType] = {};
 }
 
 // Make sure there's always at least one cap

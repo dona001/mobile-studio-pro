@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./app/common/renderer/**/*.{js,jsx,ts,tsx}",
-    "./app/common/index.html",
+    './app/common/renderer/**/*.{js,jsx,ts,tsx}',
+    './app/common/index.html',
   ],
   theme: {
     extend: {
@@ -24,5 +24,5 @@ export default {
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
   ],
-}
+};
 

@@ -1,8 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
 
-import {SERVER_TYPES} from '../constants/session-builder';
-
 class DefaultSessionDescription {
   constructor(caps) {
     this._caps = caps;
@@ -46,24 +44,7 @@ class DefaultSessionDescription {
   }
 }
 
-class LambdaTestSessionDescription extends DefaultSessionDescription {
-  constructor(caps) {
-    super('capabilities' in caps ? caps.capabilities : caps);
-  }
-
-  _fetchDeviceInfo() {
-    return 'desired' in this._caps ? this._caps.desired.deviceName : this._caps.deviceName;
-  }
-}
-
-const getSessionDescription = (caps, serverType) => {
-  switch (serverType) {
-    case SERVER_TYPES.LAMBDATEST:
-      return new LambdaTestSessionDescription(caps);
-    default:
-      return new DefaultSessionDescription(caps);
-  }
-};
+const getSessionDescription = (caps) => new DefaultSessionDescription(caps);
 
 export const getSessionInfo = (session, serverType) => {
   let identifier = session.id;

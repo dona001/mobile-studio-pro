@@ -8,22 +8,7 @@ export const SERVER_TYPES = {
   LOCAL: 'local',
   REMOTE: 'remote',
   ADVANCED: 'advanced',
-  SAUCE: 'sauce',
-  HEADSPIN: 'headspin',
-  BROWSERSTACK: 'browserstack',
-  LAMBDATEST: 'lambdatest',
-  TESTINGBOT: 'testingbot',
   EXPERITEST: 'experitest',
-  ROBOTQA: 'roboticmobi',
-  REMOTETESTKIT: 'remotetestkit',
-  BITBAR: 'bitbar',
-  KOBITON: 'kobiton',
-  PERFECTO: 'perfecto',
-  PCLOUDY: 'pcloudy',
-  MOBITRU: 'mobitru',
-  TVLABS: 'tvlabs',
-  TESTCRIBE: 'testcribe',
-  WEBMATE: 'webmate',
 };
 
 export const SAVED_SESSIONS_TABLE_VALUES = {
@@ -35,12 +20,6 @@ export const SAVED_SESSIONS_TABLE_VALUES = {
 export const PROVIDER_VALUES = {
   EXPERITEST_ACCESS_KEY: 'accessKey',
   EXPERITEST_URL: 'https://example.experitest.com',
-  HEADSPIN_URL: 'https://xxxx.headspin.io:4723/v0/your-api-token/wd/hub',
-  PCLOUDY_USERNAME: 'username@pcloudy.com',
-  PCLOUDY_HOST: 'cloud.pcloudy.com',
-  PCLOUDY_ACCESS_KEY: 'kjdgtdwn65fdasd78uy6y',
-  PERFECTO_URL: 'cloud.Perfectomobile.com',
-  TESTCRIBE_API_KEY: 'your-api-key',
 };
 
 export const ADD_CLOUD_PROVIDER_TAB_KEY = 'addCloudProvider';

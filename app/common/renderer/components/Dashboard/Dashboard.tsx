@@ -1,6 +1,6 @@
+import {CodeIcon, FileIcon, PlayIcon, RocketIcon} from '@radix-ui/react-icons';
 import React from 'react';
 import {Link} from 'react-router';
-import {CodeIcon, FileIcon, PlayIcon, RocketIcon} from '@radix-ui/react-icons';
 
 const Dashboard: React.FC = () => {
   const quickActions = [

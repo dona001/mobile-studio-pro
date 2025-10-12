@@ -58,13 +58,9 @@ const MyRecordings = (props) => {
     });
   };
 
-  const formatDate = (timestamp) => {
-    return new Date(timestamp).toLocaleString();
-  };
+  const formatDate = (timestamp) => new Date(timestamp).toLocaleString();
 
-  const getActionCount = (actions) => {
-    return actions ? actions.length : 0;
-  };
+  const getActionCount = (actions) => actions ? actions.length : 0;
 
   return (
     <Card

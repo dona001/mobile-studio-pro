@@ -1,23 +1,26 @@
 {
-  "name": "appium-inspector",
+  "name": "ocbc-mobile-pro",
   "version": "2025.8.2",
-  "description": "An app inspector for use with an Appium server",
+  "description": "OCBC Mobile Pro - Mobile App Testing & Automation Platform",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appium/appium-inspector.git"
+    "url": "git+https://github.com/ocbc/ocbc-mobile-pro.git"
   },
   "author": {
-    "name": "Appium Developers",
-    "url": "https://github.com/appium"
+    "name": "OCBC",
+    "url": "https://www.ocbc.com"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/appium/appium-inspector/issues"
+    "url": "https://github.com/ocbc/ocbc-mobile-pro/issues"
   },
   "keywords": [
-    "appium"
+    "ocbc",
+    "mobile-testing",
+    "automation",
+    "experitest"
   ],
-  "homepage": "https://github.com/appium/appium-inspector",
+  "homepage": "https://github.com/ocbc/ocbc-mobile-pro",
   "main": "./dist-browser/index.html",
   "type": "module",
   "scripts": {

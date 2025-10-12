@@ -1,0 +1,12 @@
+{
+  "platformName": "Android",
+  "platformVersion": "15",
+  "deviceName": "sdk_gphone64_arm64",
+  "automationName": "UiAutomator2",
+  "appPackage": "com.google.android.youtube",
+  "appActivity": "com.google.android.youtube/.app.honeycomb.Shell$HomeActivity",
+  "noReset": true,
+  "fullReset": false,
+  "udid": "emulator-5554"
+}
+

@@ -1,10 +1,9 @@
-import {Typography} from 'antd';
 import {BankOutlined} from '@ant-design/icons';
+import {Typography} from 'antd';
 
 const {Title} = Typography;
 
-const OCBCHeader = () => {
-  return (
+const OCBCHeader = () => (
     <div
       style={{
         display: 'flex',
@@ -46,6 +45,5 @@ const OCBCHeader = () => {
       </div>
     </div>
   );
-};
 
 export default OCBCHeader;
